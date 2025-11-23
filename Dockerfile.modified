@@ -1,0 +1,9 @@
+FROM alpine:3.19
+
+RUN apk --no-cache add ca-certificates
+
+WORKDIR /root/
+
+COPY simplefin-bridge-exporter-modified .
+
+ENTRYPOINT ["./simplefin-bridge-exporter-modified"]
